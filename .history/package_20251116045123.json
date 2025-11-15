@@ -2,7 +2,7 @@
   "name": "my-web3-community",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://trivikram165.github.io/CraveDAO",
+  "homepage": "https://apss2708.github.io/CraveDAO",
   "dependencies": {
     "@radix-ui/react-dialog": "^1.1.15",
     "@radix-ui/react-dropdown-menu": "^2.1.16",

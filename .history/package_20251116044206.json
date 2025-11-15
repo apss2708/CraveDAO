@@ -37,7 +37,7 @@
     "tailwindcss": "^4.1.16"
   },
   "scripts": {
-    "predeploy": "pnpm run build",
+    "predeploy": "npm run build",
     "deploy": "gh-pages -d build",
     "start": "react-scripts start",
     "build": "react-scripts build",
