@@ -1,5 +1,6 @@
-import React from 'react';
-import { motion } from 'framer-motion';
+import React, { useState, useEffect } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
+import CaseStudies from './CaseStudies';
 
 const caseStudy = {
   client: 'Aptos Winter School',
@@ -35,8 +36,25 @@ const proofPoints = [
     bullets: ['Residencies and cohorts', 'Hybrid meetups', 'Long-term retention loops']
   }
 ];
-
 export default function Portfolio() {
+  const [showAll, setShowAll] = useState(false);
+
+  const openAllProjects = () => setShowAll(true);
+  const closeAllProjects = () => setShowAll(false);
+
+  useEffect(() => {
+    if (!showAll) {
+      return;
+    }
+
+    const originalBodyOverflow = document.body.style.overflow;
+    document.body.style.overflow = 'hidden';
+
+    return () => {
+      document.body.style.overflow = originalBodyOverflow;
+    };
+  }, [showAll]);
+
   return (
     <section id="portfolio" className="section" style={{ background: 'var(--primary-dark)', position: 'relative', overflow: 'hidden' }}>
       
@@ -186,10 +204,120 @@ export default function Portfolio() {
         viewport={{ once: true }}
         style={{ textAlign: 'center', marginTop: '4rem', position: 'relative', zIndex: 1 }}
       >
-        <button className="btn-secondary" style={{ padding: '12px 32px' }}>
+        <button
+          className="btn-secondary"
+          style={{ padding: '12px 32px' }}
+          type="button"
+          onClick={openAllProjects}
+        >
           View All Projects
         </button>
       </motion.div>
+
+      <AnimatePresence>
+        {showAll && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.25 }}
+            style={{
+              position: 'fixed',
+              inset: 0,
+              zIndex: 999,
+              background: 'var(--primary-dark)',
+              backdropFilter: 'blur(16px)',
+              WebkitBackdropFilter: 'blur(16px)',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              padding: '20px'
+            }}
+            onClick={(e) => {
+              if (e.target === e.currentTarget) closeAllProjects();
+            }}
+          >
+            <motion.div
+              initial={{ scale: 0.95, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              exit={{ scale: 0.95, opacity: 0 }}
+              transition={{ duration: 0.25 }}
+              style={{
+                width: '100%',
+                maxWidth: '1200px',
+                maxHeight: '85vh',
+                borderRadius: '24px',
+                overflow: 'hidden',
+                border: '1px solid var(--glass-border)',
+                background: 'rgba(10, 15, 45, 0.98)',
+                boxShadow: '0 24px 60px rgba(0, 0, 0, 0.65)',
+                display: 'flex',
+                flexDirection: 'column'
+              }}
+            >
+              <div
+                style={{
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'space-between',
+                  padding: '1rem 1.5rem',
+                  borderBottom: '1px solid var(--glass-border)'
+                }}
+              >
+                <div style={{ display: 'flex', flexDirection: 'column', gap: '0.25rem' }}>
+                  <span
+                    style={{
+                      fontSize: '0.8rem',
+                      letterSpacing: '0.12em',
+                      textTransform: 'uppercase',
+                      color: 'var(--text-muted)'
+                    }}
+                  >
+                    Case Study Library
+                  </span>
+                  <h3
+                    style={{
+                      margin: 0,
+                      fontSize: '1.4rem',
+                      color: 'var(--text-primary)'
+                    }}
+                  >
+                    All Campaigns
+                  </h3>
+                </div>
+                <button
+                  type="button"
+                  onClick={closeAllProjects}
+                  style={{
+                    width: 36,
+                    height: 36,
+                    borderRadius: '999px',
+                    border: '1px solid var(--badge-border)',
+                    background: 'rgba(10, 16, 39, 0.9)',
+                    color: 'var(--text-primary)',
+                    cursor: 'pointer',
+                    fontSize: '1.1rem',
+                    lineHeight: 1
+                  }}
+                  aria-label="Close case study library"
+                >
+                  ×
+                </button>
+              </div>
+
+              <div
+                style={{
+                  flex: 1,
+                  overflow: 'auto',
+                  padding: '1.5rem'
+                }}
+              >
+                <CaseStudies />
+              </div>
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </section>
   );
 }

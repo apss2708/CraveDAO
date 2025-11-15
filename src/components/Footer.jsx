@@ -64,6 +64,36 @@ export default function Footer() {
           marginBottom: '2rem'
         }}>
           <motion.a
+            href="https://wa.me/"
+            target="_blank"
+            rel="noopener noreferrer"
+            whileHover={{ scale: 1.1, y: -2 }}
+            style={{
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              width: '45px',
+              height: '45px',
+              background: 'rgba(37, 211, 102, 0.12)',
+              border: '1px solid rgba(37, 211, 102, 0.25)',
+              borderRadius: '50%',
+              transition: 'all 0.3s ease'
+            }}
+          >
+            <svg
+              width="20"
+              height="20"
+              viewBox="0 0 24 24"
+              aria-hidden="true"
+            >
+              <path
+                fill="#25D366"
+                d="M20.52 3.48A11.78 11.78 0 0012 0a11.94 11.94 0 00-10.38 17.63L0 24l6.54-1.71A11.94 11.94 0 0012 24h.01A12 12 0 0024 12a11.66 11.66 0 00-3.48-8.52zm-8.5 18a9.93 9.93 0 01-5.06-1.39l-.36-.21-3.88 1 1.04-3.78-.25-.39A10 10 0 1112 21.48zm5.48-7.3c-.3-.15-1.77-.87-2.04-.97s-.47-.15-.67.15-.77.97-.95 1.17-.35.22-.65.07a8.15 8.15 0 01-2.4-1.48 9 9 0 01-1.66-2.06c-.17-.3 0-.46.13-.61.13-.13.3-.35.45-.52a2 2 0 00.3-.5.56.56 0 000-.54c-.08-.15-.67-1.62-.92-2.23s-.49-.5-.67-.51h-.57a1.1 1.1 0 00-.8.38A3.37 3.37 0 006.1 9.1a5.88 5.88 0 001.24 3.08 13.34 13.34 0 005.12 4.5 5.54 5.54 0 003.32.7 2.83 2.83 0 001.86-1.32 2.3 2.3 0 00.16-1.32c-.07-.12-.27-.2-.57-.34z"
+              />
+            </svg>
+          </motion.a>
+
+          <motion.a
             href="https://discord.gg/CraveDAO"
             target="_blank"
             rel="noopener noreferrer"

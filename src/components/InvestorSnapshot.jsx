@@ -14,7 +14,7 @@ const snapshot = [
   {
     label: 'Traction',
     points: [
-      '300+ campus nodes, 2K+ verified creators, 500M+ OEM reach',
+      '2,500+ campus nodes, 2K+ verified creators, 500M+ OEM reach',
       'Average 3.6x ROI on performance-linked campaign cohorts',
       'Live dashboards share wallet, signup, and retention metrics with LPs'
     ]

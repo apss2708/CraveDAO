@@ -82,7 +82,7 @@ export default function Contact() {
           viewport={{ once: true }}
           transition={{ delay: 0.1 }}
         >
-          Let's Build Something Amazing Together
+          Plan Your Next Growth Sprint with CraveDAO
         </motion.h2>
         <motion.p
           className="animate-on-scroll"
@@ -92,7 +92,7 @@ export default function Contact() {
           viewport={{ once: true }}
           transition={{ delay: 0.2 }}
         >
-          Ready to scale your Web3 project in India? Reach out to us and let's discuss how we can help you grow.
+          Ready to scale your Web3 presence in India? Share a few lines about your roadmap and KPIs, and our team will respond with a calendar link and clear next steps.
         </motion.p>
       </div>
 
@@ -267,6 +267,7 @@ export default function Contact() {
                   <div style={{ fontSize: '0.85rem', color: 'var(--text-muted)' }}>Join daily founder AMAs</div>
                 </div>
               </motion.a>
+
               <motion.a
                 href="https://t.me/CraveDAO"
                 target="_blank"
@@ -293,6 +294,85 @@ export default function Contact() {
                 <div>
                   <div style={{ fontWeight: 600 }}>Telegram</div>
                   <div style={{ fontSize: '0.85rem', color: 'var(--text-muted)' }}>Chat with operators in real time</div>
+                </div>
+              </motion.a>
+
+              <motion.a
+                href="https://wa.me/"
+                target="_blank"
+                rel="noopener noreferrer"
+                whileHover={{ x: 5 }}
+                style={{
+                  display: 'flex',
+                  alignItems: 'center',
+                  gap: '1rem',
+                  padding: '1rem',
+                  background: 'linear-gradient(135deg, rgba(37, 211, 102, 0.2) 0%, rgba(1, 35, 38, 0.4) 100%)',
+                  border: '1px solid rgba(37, 211, 102, 0.26)',
+                  borderRadius: '12px',
+                  color: 'var(--text-primary)',
+                  textDecoration: 'none',
+                  backdropFilter: 'blur(16px)',
+                  WebkitBackdropFilter: 'blur(16px)',
+                  transition: 'all 0.3s ease'
+                }}
+              >
+                <div
+                  style={{
+                    width: 24,
+                    height: 24,
+                    borderRadius: '50%',
+                    background: '#25D366',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    padding: 2
+                  }}
+                  aria-hidden="true"
+                >
+                  <svg
+                    width="18"
+                    height="18"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      fill="#021B10"
+                      d="M20.52 3.48A11.78 11.78 0 0012 0a11.94 11.94 0 00-10.38 17.63L0 24l6.54-1.71A11.94 11.94 0 0012 24h.01A12 12 0 0024 12a11.66 11.66 0 00-3.48-8.52zm-8.5 18a9.93 9.93 0 01-5.06-1.39l-.36-.21-3.88 1 1.04-3.78-.25-.39A10 10 0 1112 21.48zm5.48-7.3c-.3-.15-1.77-.87-2.04-.97s-.47-.15-.67.15-.77.97-.95 1.17-.35.22-.65.07a8.15 8.15 0 01-2.4-1.48 9 9 0 01-1.66-2.06c-.17-.3 0-.46.13-.61.13-.13.3-.35.45-.52a2 2 0 00.3-.5.56.56 0 000-.54c-.08-.15-.67-1.62-.92-2.23s-.49-.5-.67-.51h-.57a1.1 1.1 0 00-.8.38A3.37 3.37 0 006.1 9.1a5.88 5.88 0 001.24 3.08 13.34 13.34 0 005.12 4.5 5.54 5.54 0 003.32.7 2.83 2.83 0 001.86-1.32 2.3 2.3 0 00.16-1.32c-.07-.12-.27-.2-.57-.34z"
+                    />
+                  </svg>
+                </div>
+                <div>
+                  <div style={{ fontWeight: 600 }}>WhatsApp</div>
+                  <div style={{ fontSize: '0.85rem', color: 'var(--text-muted)' }}>Get quick coordination on campaigns</div>
+                </div>
+              </motion.a>
+
+              <motion.a
+                href="https://twitter.com/CraveDAO"
+                target="_blank"
+                rel="noopener noreferrer"
+                whileHover={{ x: 5 }}
+                style={{
+                  display: 'flex',
+                  alignItems: 'center',
+                  gap: '1rem',
+                  padding: '1rem',
+                  background: 'linear-gradient(135deg, rgba(255, 255, 255, 0.12) 0%, rgba(1, 35, 38, 0.52) 100%)',
+                  border: '1px solid rgba(255, 255, 255, 0.22)',
+                  borderRadius: '12px',
+                  color: 'var(--text-primary)',
+                  textDecoration: 'none',
+                  backdropFilter: 'blur(16px)',
+                  WebkitBackdropFilter: 'blur(16px)',
+                  transition: 'all 0.3s ease'
+                }}
+              >
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="#ffffff" aria-hidden="true">
+                  <path d="M18.9 3H21l-5.1 5.8L21.8 21h-4.8l-3.8-6.2L9 21H3l5.6-6.4L3.2 3h4.8l3.4 5.5L18.9 3z" />
+                </svg>
+                <div>
+                  <div style={{ fontWeight: 600 }}>X (Twitter)</div>
+                  <div style={{ fontSize: '0.85rem', color: 'var(--text-muted)' }}>Follow campaign stories and updates</div>
                 </div>
               </motion.a>
             </div>

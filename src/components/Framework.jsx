@@ -5,7 +5,7 @@ const channels = [
   {
     title: 'College Community Network',
     icon: '🎓',
-    description: 'Active presence across 300+ Indian colleges with verified student leads and ambassadors.',
+    description: 'Active presence across 2,500+ Indian colleges with verified student leads and ambassadors.',
     capabilities: [
       'Workshops, wallet onboarding, and live activations with measurable conversions',
       'Sampling-style Web3 quests and NFT drops in controlled campus environments',

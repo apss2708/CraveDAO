@@ -6,7 +6,7 @@ import { FiMessageCircle, FiSend, FiUsers, FiTrendingUp, FiGlobe } from 'react-i
 const proofPoints = [
   {
     title: 'Campus & Creator Nodes',
-    description: '300+ campus captains and 2K verified storytellers compound every launch.',
+    description: '2,500+ campus captains and 2K verified storytellers compound every launch.',
     icon: FiUsers
   },
   {

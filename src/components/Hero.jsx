@@ -36,7 +36,7 @@ export default function Hero() {
   };
 
   const highlightChips = [
-    '300+ Indian campuses activated',
+    '2,500+ Indian campuses activated',
     '2K+ verified creators in network',
     '3.6x average campaign ROI',
     'Trusted by Polygon, Base & Swiggy'
@@ -239,42 +239,6 @@ export default function Hero() {
             Get Investor Overview
           </motion.a>
         </motion.div>
-
-        {/* Investor Metrics */}
-        <motion.div
-          className="hero-metrics animate-on-scroll"
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 1.2 }}
-        >
-          {[
-            { value: 300, suffix: '+', label: 'College Communities Activated' },
-            { value: 2, suffix: 'K+', label: 'Verified Creators in Network' },
-            { value: 500, suffix: 'M+', label: 'Cumulative Partner Reach' }
-          ].map((stat, idx) => (
-            <motion.div
-              key={stat.label}
-              className="card-glass hero-metric-card animate-on-scroll"
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: idx * 0.1, duration: 0.6, ease: 'easeOut' }}
-              whileHover={{ y: -8, scale: 1.01 }}
-            >
-              <div className="hero-metric-card__value">
-                <CountUp
-                  end={stat.value}
-                  duration={2}
-                  suffix={stat.suffix}
-                  enableScrollSpy
-                  scrollSpyOnce
-                />
-              </div>
-              <div className="hero-metric-card__label">{stat.label}</div>
-            </motion.div>
-          ))}
-        </motion.div>
-
       </motion.div>
 
       {/* Additional Professional Glow Effects */}

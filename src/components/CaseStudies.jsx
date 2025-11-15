@@ -22,11 +22,12 @@ import 'swiper/css/navigation';
 
 const studies = [
   {
-    title: 'Aptos Winter School',
-    result: '3,400+ wallets activated across two hybrid residencies',
-    description: 'Blended campus residencies with Discord builder cohorts and OEM sampling touchpoints to unlock verified adoption.',
-    duration: '6-week hybrid residency',
-    playbook: 'Campus x Creator Activation',
+    title: 'Aptos Winter School Residency',
+    result: '3,400+ wallets activated and 91% NPS across two hybrid cohorts',
+    description:
+      'Global L1 Aptos tapped CraveDAO as its India human distribution layer. Over a six-week residency we combined campus activations, Discord builder cohorts and OEM co-branded sampling (including Swiggy-powered late-night drops) to move students from curiosity to verified on-chain users.',
+    duration: '6-week hybrid residency (multi-city campuses)',
+    playbook: 'College community network × creator cohorts × OEM co-branding',
     reportLink: 'mailto:ops@cravedao.xyz?subject=Aptos%20winter%20school%20report',
     impact: [
       { icon: FiUsers, label: 'Wallets Activated', value: '3,400+' },
@@ -34,17 +35,18 @@ const studies = [
       { icon: FiTrendingUp, label: 'Net Promoter Score', value: '91%' }
     ],
     kpis: [
-      { label: 'Wallet Activations', value: 86 },
-      { label: 'Repeat Participation', value: 72 },
-      { label: 'Partner Co-funding', value: 64 }
+      { label: 'Wallet Activation Uplift vs Baseline', value: 86 },
+      { label: 'Repeat Participation per Cohort', value: 72 },
+      { label: 'Partner Co-funding Share', value: 64 }
     ]
   },
   {
-    title: 'Base Builder League',
-    result: '2.8x ROI on creator-led onboarding sprint',
-    description: 'Creator collectives translated the Base roadmap into snackable rituals and measurable FMCG brand integrations.',
-    duration: '5-week sprint',
-    playbook: 'Creator x OEM Alliances',
+    title: 'Base Builder League – Creator GTM',
+    result: '2.8x ROI on creator-led onboarding sprints',
+    description:
+      'A US L2 protocol partnered with CraveDAO to localise its India go-to-market. Creator collectives ran serialized content, campus quests and OEM shelf-space moments to translate the Base roadmap into measurable installs, signups and on-chain activity.',
+    duration: '5-week multi-channel sprint',
+    playbook: 'Creator network × college quests × OEM retail surfaces',
     reportLink: 'mailto:ops@cravedao.xyz?subject=Base%20builder%20league%20report',
     impact: [
       { icon: FiTrendingUp, label: 'Campaign ROI', value: '2.8x' },
@@ -52,17 +54,18 @@ const studies = [
       { icon: FiUsers, label: 'Creators Activated', value: '320' }
     ],
     kpis: [
-      { label: 'Creator Engagement', value: 78 },
-      { label: 'Content Completion', value: 83 },
+      { label: 'Creator Engagement Rate', value: 78 },
+      { label: 'Content Completion Across Series', value: 83 },
       { label: 'Event-to-DAO Conversion', value: 61 }
     ]
   },
   {
-    title: 'Polygon Guild India',
-    result: 'Coordinated 18 multi-city events with 94% NPS',
-    description: 'Campus guilds, hackathon build weeks, and OEM rewards funnelled mission-critical user actions back to protocol dashboards.',
-    duration: 'Quarterly program',
-    playbook: 'Guild Network x OEM Rewards',
+    title: 'Polygon Guild India – Multi-City Program',
+    result: '18-city guild program with 94% NPS and 1,200+ qualified leads',
+    description:
+      'For Polygon Guild India, CraveDAO operated the on-ground and OEM layer for a quarterly, multi-city program. Campus guilds, hackathon build weeks and OEM rewards at food and lifestyle partners turned meetups into a repeatable pipeline of qualified leads and retained communities.',
+    duration: 'Quarterly multi-city program',
+    playbook: 'Guild network × hackathons × OEM rewards & sampling',
     reportLink: 'mailto:ops@cravedao.xyz?subject=Polygon%20guild%20india%20report',
     impact: [
       { icon: FiActivity, label: 'Cities Activated', value: '18' },
@@ -70,9 +73,9 @@ const studies = [
       { icon: FiUsers, label: 'Community Leads', value: '1,200+' }
     ],
     kpis: [
-      { label: 'Attendance Conversion', value: 88 },
-      { label: 'Post-Event Retention', value: 74 },
-      { label: 'Brand Recall', value: 69 }
+      { label: 'Attendance-to-Activation Conversion', value: 88 },
+      { label: 'Post-Event Community Retention', value: 74 },
+      { label: 'Brand Recall Across Cohorts', value: 69 }
     ]
   }
 ];
@@ -128,7 +131,7 @@ export default function CaseStudies() {
           viewport={{ once: true }}
           transition={{ delay: 0.2 }}
         >
-          Mission: Deploy flagship experiences that convert curiosity into retained users. Proof: Each sprint is measured against conversion bars the VC committee already tracks. Invitation: Slide through recent wins and imagine your roadmap inside the next carousel slot.
+          Mission: Design flagship experiences that convert curiosity into retained users. Proof: Each sprint is measured against the same conversion bars your investment committee already tracks. Invitation: Review recent campaigns and picture your roadmap in the next cohort.
         </motion.p>
       </div>
 

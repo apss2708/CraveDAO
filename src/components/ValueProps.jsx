@@ -21,8 +21,8 @@ const valueProps = [
   },
   {
     icon: FiGlobe,
-    title: 'Global Footprint',
-    description: 'Enables cross-market penetration with operational presence in India & China.'
+    title: 'Omni-channel First-Party Data Capture',
+    description: 'Builds an owned data spine across campus, creator, and OEM touchpoints to enable smart targeting and brand-safe optimisation.'
   },
   {
     icon: FiTarget,

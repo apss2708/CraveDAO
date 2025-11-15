@@ -50,7 +50,7 @@ export default function Ambassador() {
         </motion.p>
       </div>
 
-      <div className="responsive-grid wide-columns">
+      <div className="advantage-grid">
         {advantages.map((advantage, idx) => (
           <motion.div
             key={idx}

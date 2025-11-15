@@ -2,7 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 
 const stats = [
-  { label: '300+ College Communities', value: 'Workshops, wallet onboarding and live activations led by verified ambassadors' },
+  { label: '2,500+ College Communities', value: 'Workshops, wallet onboarding and live activations led by verified ambassadors' },
   { label: '2,000+ Verified Creators', value: 'Narrative-led storytelling across tech, culture, finance, gaming and lifestyle' },
   { label: '500M+ Partner Reach', value: 'OEM, FMCG and lifestyle collaborations that amplify Web3 discovery' },
   { label: '50M+ Campaign Impressions', value: 'Hybrid programs that convert awareness into measurable KPIs' }
@@ -55,7 +55,7 @@ export default function About() {
         </motion.h2>
       </div>
 
-      <div style={{ maxWidth: '800px', margin: '0 auto' }}>
+      <div style={{ maxWidth: '1100px', margin: '0 auto' }}>
         <motion.p
           style={{ fontSize: '1.25rem', marginBottom: '2rem', textAlign: 'center' }}
           initial={{ opacity: 0, y: 20 }}
@@ -76,8 +76,13 @@ export default function About() {
         </motion.p>
 
         <motion.div
-          className="grid-2"
-          style={{ marginTop: '2rem' }}
+          style={{
+            marginTop: '2rem',
+            display: 'flex',
+            gap: '1.5rem',
+            justifyContent: 'space-between',
+            flexWrap: 'nowrap'
+          }}
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
@@ -89,8 +94,18 @@ export default function About() {
               className="card"
               variants={statVariants}
               whileHover="hover"
+              style={{
+                flex: 1,
+                minWidth: 0
+              }}
             >
-              <h3 style={{ color: '#00E5CC', marginBottom: '1rem', textShadow: '0 4px 16px rgba(0, 229, 204, 0.4)' }}>
+              <h3
+                style={{
+                  color: '#00E5CC',
+                  marginBottom: '1rem',
+                  textShadow: '0 4px 16px rgba(0, 229, 204, 0.4)'
+                }}
+              >
                 {stat.label}
               </h3>
               <p>{stat.value}</p>

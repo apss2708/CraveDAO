@@ -74,7 +74,7 @@ export default function Services() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
         >
-          📊 Performance Infrastructure Layer
+          🛠️ Services & Performance Infrastructure
         </motion.div>
         <motion.h2
           className="animate-on-scroll"
@@ -83,7 +83,7 @@ export default function Services() {
           viewport={{ once: true }}
           transition={{ delay: 0.1 }}
         >
-          KPIs We Deliver and Measure
+          Services and KPIs We Deliver
         </motion.h2>
         <motion.p
           className="animate-on-scroll"
@@ -93,7 +93,7 @@ export default function Services() {
           viewport={{ once: true }}
           transition={{ delay: 0.2 }}
         >
-          Mission: Make every activation accountable to the right north-star metric. Proof: We wire dashboards into wallet funnels, ambassador actions, and OEM co-funding in real time. Invitation: Anchor your roadmap to metrics the investment committee already tracks and watch campaigns graduate from experiments to engines.
+          Mission: Ship services that turn first-touch curiosity into verifiable growth. Proof: Each service linewallet activations, signup funnels, retention engines, and brand reachis wired into a shared analytics layer. Invitation: Choose the KPI that matters most and we assemble the operators, playbooks, and OEM surfaces around it.
         </motion.p>
       </div>
 

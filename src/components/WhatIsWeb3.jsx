@@ -10,7 +10,7 @@ const cards = [
   },
   {
     title: 'Why India Leads',
-    description: 'Campus guilds, creators and OEM alliances co-create trust. We convert curiosity into retained users across 300+ micro-communities.',
+    description: 'Campus guilds, creators and OEM alliances co-create trust. We convert curiosity into retained users across 2,500+ micro-communities.',
     link: '#metrics',
     cta: 'Review live metrics'
   },

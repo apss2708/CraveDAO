@@ -15,7 +15,7 @@ const metrics = [
   {
     icon: FiUsers,
     label: 'College Communities Activated',
-    value: 300,
+    value: 2500,
     suffix: '+',
     insight: 'Human-led campus nodes delivering go-to-market proof across India.',
     delta: '+18% QoQ',
@@ -118,7 +118,7 @@ export default function LiveMetrics() {
           viewport={{ once: true }}
           transition={{ delay: 0.2 }}
         >
-          Our operators manage a shared analytics layer across campus rollouts, creator missions, and OEM alliances. These heartbeat metrics refresh live and frame the investor narrative before we ship the next sprint.
+          Our operators manage a shared analytics layer across campus rollouts, creator missions, and OEM alliances. These heartbeat metrics refresh live and frame the investor narrative before we plan the next sprint.
         </motion.p>
       </div>
 
