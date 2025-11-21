@@ -12,26 +12,29 @@ export default function Hero() {
     target: heroRef,
     offset: ['start start', 'end start']
   });
-  const parallaxY = useTransform(scrollYProgress, [0, 0.8], [0, -180]);
-  const parallaxOpacity = useTransform(scrollYProgress, [0, 0.8], [1, 0.7]);
+  const parallaxY = useTransform(scrollYProgress, [0, 0.8], [0, -160]);
+  const parallaxOpacity = useTransform(scrollYProgress, [0, 0.8], [1, 0.75]);
 
   const containerVariants = {
-    hidden: { opacity: 0 },
+    hidden: { opacity: 0, y: 28 },
     visible: {
       opacity: 1,
+      y: 0,
       transition: {
-        staggerChildren: 0.2,
-        delayChildren: 0.3
+        duration: 0.8,
+        ease: 'easeOut',
+        staggerChildren: 0.18,
+        delayChildren: 0.25
       }
     }
   };
 
   const itemVariants = {
-    hidden: { opacity: 0, y: 30 },
+    hidden: { opacity: 0, y: 26 },
     visible: {
       opacity: 1,
       y: 0,
-      transition: { duration: 0.8, ease: 'easeOut' }
+      transition: { duration: 0.75, ease: 'easeOut' }
     }
   };
 
@@ -40,6 +43,28 @@ export default function Hero() {
     '2K+ verified creators in network',
     '3.6x average campaign ROI',
     'Trusted by Polygon, Base & Swiggy'
+  ];
+
+  const heroMetrics = [
+    {
+      label: 'College Nodes',
+      value: 2500,
+      suffix: '+',
+      description: 'student collectives across India'
+    },
+    {
+      label: 'Creator Network',
+      value: 2,
+      suffix: 'K+',
+      description: 'verified storytellers and operators'
+    },
+    {
+      label: 'Average ROI',
+      value: 3.6,
+      suffix: 'x',
+      decimals: 1,
+      description: 'campaign ROI on tracked actions'
+    }
   ];
 
   return (
@@ -51,61 +76,63 @@ export default function Hero() {
         minHeight: '100vh',
         display: 'flex',
         alignItems: 'center',
-        padding: 'clamp(100px, 12vw, 140px) 20px 80px',
+        padding: 'clamp(110px, 12vw, 140px) 20px 90px',
         position: 'relative',
         overflow: 'hidden',
         background: 'transparent'
       }}
+      data-testid="hero-section"
     >
-      
       {/* Hero Decorative Elements */}
       <HeroDecorations style={{ y: parallaxY, opacity: parallaxOpacity }} />
-      
-      {/* Professional Background Elements */}
-      <div style={{
-        position: 'absolute',
-        top: '0',
-        right: '0',
-        width: '60%',
-        height: '100%',
-        background: 'linear-gradient(90deg, transparent 0%, rgba(212, 175, 55, 0.02) 100%)',
-        zIndex: 1
-      }} />
 
-      {/* Floating Abstract Shapes */}
-      <motion.div
-        animate={{ 
-          y: [0, -20, 0],
-          rotate: [0, 5, 0]
-        }}
-        transition={{ duration: 8, repeat: Infinity }}
+      {/* Gradient spotlight background */}
+      <div
+        aria-hidden="true"
         style={{
           position: 'absolute',
-          top: '20%',
-          right: '15%',
-          width: '100px',
-          height: '100px',
-          border: '2px solid rgba(212, 175, 55, 0.2)',
-          borderRadius: '20px',
-          transform: 'rotate(45deg)',
+          inset: 0,
+          backgroundImage:
+            'radial-gradient(circle at top left, rgba(56, 189, 248, 0.32) 0%, transparent 55%), ' +
+            'radial-gradient(circle at top right, rgba(34, 197, 94, 0.28) 0%, transparent 52%), ' +
+            'radial-gradient(circle at bottom, rgba(15, 23, 42, 0.9) 0%, transparent 65%)',
+          opacity: 0.9,
+          pointerEvents: 'none',
+          zIndex: 0
+        }}
+      />
+
+      {/* Floating geometric accents */}
+      <motion.div
+        animate={{ y: [0, -16, 0], rotate: [0, 4, 0] }}
+        transition={{ duration: 10, repeat: Infinity, ease: 'easeInOut' }}
+        style={{
+          position: 'absolute',
+          top: '18%',
+          right: '14%',
+          width: 120,
+          height: 120,
+          borderRadius: 30,
+          border: '1px solid rgba(148, 163, 184, 0.65)',
+          background:
+            'radial-gradient(circle at top, rgba(56, 189, 248, 0.16) 0%, rgba(15, 23, 42, 0.98) 65%)',
           zIndex: 1
         }}
       />
 
       <motion.div
-        animate={{ 
-          y: [0, 15, 0],
-          rotate: [0, -3, 0]
-        }}
-        transition={{ duration: 6, repeat: Infinity, delay: 1 }}
+        animate={{ y: [0, 18, 0], rotate: [0, -3, 0] }}
+        transition={{ duration: 9, repeat: Infinity, ease: 'easeInOut', delay: 0.8 }}
         style={{
           position: 'absolute',
-          bottom: '30%',
+          bottom: '26%',
           right: '20%',
-          width: '60px',
-          height: '60px',
-          border: '1px solid rgba(108, 99, 255, 0.2)',
-          borderRadius: '50%',
+          width: 72,
+          height: 72,
+          borderRadius: 999,
+          border: '1px solid rgba(148, 163, 184, 0.5)',
+          background:
+            'radial-gradient(circle at top, rgba(129, 140, 248, 0.2) 0%, rgba(15, 23, 42, 0.98) 65%)',
           zIndex: 1
         }}
       />
@@ -118,7 +145,7 @@ export default function Hero() {
         style={{
           position: 'relative',
           zIndex: 2,
-          maxWidth: '900px',
+          maxWidth: 1040,
           margin: '0 auto',
           width: '100%',
           display: 'flex',
@@ -131,39 +158,42 @@ export default function Hero() {
           className="section-badge animate-on-scroll"
           variants={itemVariants}
           style={{
-            background: 'rgba(5, 242, 219, 0.1)',
-            border: '1px solid var(--accent-cyan)',
-            padding: '10px 24px',
-            borderRadius: '24px',
-            fontFamily: 'var(--font-subheading)',
-            fontSize: '0.875rem',
-            fontWeight: 600,
-            letterSpacing: '0.05em',
-            textTransform: 'uppercase',
-            marginBottom: '1.5rem',
-            boxShadow: 'var(--glow-cyan)',
-            display: 'inline-block'
+            background: 'rgba(15, 23, 42, 0.98)',
+            borderColor: 'rgba(148, 163, 184, 0.75)',
+            boxShadow: '0 0 0 1px rgba(15, 23, 42, 1), 0 15px 35px rgba(15, 23, 42, 0.9)'
           }}
+          data-testid="hero-badge"
         >
-          🚀 India's Web3 Gateway
+          India&apos;s Web3 Growth Engine
         </motion.div>
 
         <motion.h1
+          className="animate-on-scroll text-gradient-headline"
+          variants={itemVariants}
+          style={{
+            marginBottom: '1.5rem',
+            textShadow: '0 0 30px rgba(15, 23, 42, 0.85)'
+          }}
+          data-testid="hero-heading"
+        >
+          Turn Indian Attention into On‑Chain Traction.
+        </motion.h1>
+
+        <motion.p
           className="animate-on-scroll"
           variants={itemVariants}
           style={{
-            fontSize: 'clamp(2.75rem, 6vw, 3.5rem)',
-            fontWeight: 700,
-            marginBottom: '1.5rem',
-            textShadow: '0 0 30px rgba(99, 102, 241, 0.35)',
-            filter: 'drop-shadow(0 4px 20px rgba(236, 65, 134, 0.25))',
-            lineHeight: 1.1,
-            textAlign: 'center',
-            animation: 'pulse-glow 3s ease-in-out infinite'
+            fontSize: 'clamp(1rem, 2.4vw, 1.2rem)',
+            maxWidth: 720,
+            color: 'var(--text-secondary)',
+            marginBottom: '2.3rem',
+            lineHeight: 1.9
           }}
+          data-testid="hero-subtitle"
         >
-          WE HAVE EVERYTHING YOU CRAVE FOR ..
-        </motion.h1>
+          CraveDAO activates the human distribution layer for Web3 in India – orchestrating college collectives,
+          creator networks and OEM partnerships into one measurable growth engine.
+        </motion.p>
 
         <motion.div
           className="animate-on-scroll"
@@ -171,23 +201,24 @@ export default function Hero() {
           style={{
             display: 'flex',
             flexWrap: 'wrap',
-            gap: '0.75rem',
+            gap: '0.8rem',
             justifyContent: 'center',
-            marginBottom: '2rem'
+            marginBottom: '2.25rem'
           }}
+          data-testid="hero-highlight-chips"
         >
           {highlightChips.map((chip) => (
             <motion.span
               key={chip}
-              variants={itemVariants}
+              whileHover={{ y: -2 }}
               style={{
-                padding: '0.5rem 1rem',
-                borderRadius: '999px',
-                border: '1px solid rgba(99, 102, 241, 0.35)',
-                background: 'var(--gradient-card-soft)',
-                color: 'var(--text-primary)',
-                fontSize: '0.85rem',
-                letterSpacing: '0.04em',
+                padding: '0.55rem 1.1rem',
+                borderRadius: 999,
+                border: '1px solid rgba(148, 163, 184, 0.6)',
+                background: 'rgba(15, 23, 42, 0.96)',
+                color: '#E5E7EB',
+                fontSize: '0.8rem',
+                letterSpacing: '0.14em',
                 textTransform: 'uppercase'
               }}
             >
@@ -195,21 +226,6 @@ export default function Hero() {
             </motion.span>
           ))}
         </motion.div>
-
-        <motion.p
-          className="animate-on-scroll"
-          variants={itemVariants}
-          style={{
-            fontSize: 'clamp(1rem, 2.5vw, 1.25rem)',
-            color: 'var(--text-secondary)',
-            marginBottom: '2.5rem',
-            lineHeight: 1.8
-          }}
-        >
-          CraveDAO activates the human distribution layer for Web3 in India. We combine
-          college collectives, creator networks, and OEM partnerships to deliver
-          verifiable user actions, brand trust, and long-term community engagement.
-        </motion.p>
 
         <motion.div
           className="hero-cta-group animate-on-scroll"
@@ -225,32 +241,72 @@ export default function Hero() {
           <motion.a
             className="btn-cta"
             href="#contact"
-            whileTap={{ scale: 0.95 }}
+            whileTap={{ scale: 0.97 }}
             style={{ textDecoration: 'none' }}
+            data-testid="hero-primary-cta"
           >
-            Book Growth Sprint
+            Book a Growth Sprint
           </motion.a>
           <motion.a
             className="btn-secondary"
             href="/CraveDAO_Investor_Overview.pdf"
-            whileTap={{ scale: 0.95 }}
+            whileTap={{ scale: 0.97 }}
             style={{ textDecoration: 'none' }}
+            data-testid="hero-secondary-cta"
           >
-            Get Investor Overview
+            Download Investor Overview
           </motion.a>
+        </motion.div>
+
+        {/* Hero metrics row */}
+        <motion.div
+          className="hero-metrics"
+          variants={itemVariants}
+          style={{ marginTop: '3rem' }}
+          data-testid="hero-metrics-row"
+        >
+          {heroMetrics.map((metric) => (
+            <div
+              key={metric.label}
+              className="hero-metric-card"
+              data-testid={`hero-metric-${metric.label.replace(/\s+/g, '-').toLowerCase()}`}
+            >
+              <div className="hero-metric-card__value">
+                <CountUp
+                  end={metric.value}
+                  duration={2}
+                  decimals={metric.decimals ?? (Number.isInteger(metric.value) ? 0 : 1)}
+                  suffix={metric.suffix}
+                  enableScrollSpy
+                  scrollSpyOnce
+                />
+              </div>
+              <div className="hero-metric-card__label">{metric.label}</div>
+              <p
+                style={{
+                  marginTop: '0.35rem',
+                  fontSize: '0.9rem',
+                  color: 'var(--text-secondary)'
+                }}
+              >
+                {metric.description}
+              </p>
+            </div>
+          ))}
         </motion.div>
       </motion.div>
 
-      {/* Additional Professional Glow Effects */}
+      {/* Bottom fade to create a seamless handoff into next section */}
       <div
         aria-hidden="true"
         style={{
           position: 'absolute',
-          bottom: '0',
-          left: '0',
+          bottom: 0,
+          left: 0,
           width: '100%',
-          height: '240px',
-          background: 'linear-gradient(180deg, rgba(1, 4, 38, 0) 0%, rgba(1, 9, 38, 0.55) 55%, rgba(1, 4, 38, 0.85) 78%, rgba(2, 26, 115, 0.2) 100%)',
+          height: 220,
+          background:
+            'linear-gradient(180deg, rgba(2, 6, 23, 0) 0%, rgba(2, 6, 23, 0.85) 55%, rgba(2, 6, 23, 1) 100%)',
           pointerEvents: 'none',
           zIndex: 1
         }}
