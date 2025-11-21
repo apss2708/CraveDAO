@@ -164,19 +164,24 @@ export default function Hero() {
           }}
           data-testid="hero-badge"
         >
-          India&apos;s Web3 Growth Engine
+          🚀 India's Web3 Gateway
         </motion.div>
 
         <motion.h1
-          className="animate-on-scroll text-gradient-headline"
+          className="animate-on-scroll"
           variants={itemVariants}
           style={{
+            fontSize: 'clamp(2.75rem, 6vw, 3.5rem)',
+            fontWeight: 700,
             marginBottom: '1.5rem',
-            textShadow: '0 0 30px rgba(15, 23, 42, 0.85)'
+            textShadow: '0 0 30px rgba(99, 102, 241, 0.35)',
+            filter: 'drop-shadow(0 4px 20px rgba(236, 65, 134, 0.25))',
+            lineHeight: 1.1,
+            textAlign: 'center'
           }}
           data-testid="hero-heading"
         >
-          Turn Indian Attention into On‑Chain Traction.
+          WE HAVE EVERYTHING YOU CRAVE FOR ..
         </motion.h1>
 
         <motion.p
@@ -191,8 +196,9 @@ export default function Hero() {
           }}
           data-testid="hero-subtitle"
         >
-          CraveDAO activates the human distribution layer for Web3 in India – orchestrating college collectives,
-          creator networks and OEM partnerships into one measurable growth engine.
+          CraveDAO activates the human distribution layer for Web3 in India. We combine college collectives,
+          creator networks, and OEM partnerships to deliver verifiable user actions, brand trust, and long-term
+          community engagement.
         </motion.p>
 
         <motion.div
@@ -245,7 +251,7 @@ export default function Hero() {
             style={{ textDecoration: 'none' }}
             data-testid="hero-primary-cta"
           >
-            Book a Growth Sprint
+            Book Growth Sprint
           </motion.a>
           <motion.a
             className="btn-secondary"
@@ -254,7 +260,7 @@ export default function Hero() {
             style={{ textDecoration: 'none' }}
             data-testid="hero-secondary-cta"
           >
-            Download Investor Overview
+            Get Investor Overview
           </motion.a>
         </motion.div>
 

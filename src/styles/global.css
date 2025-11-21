@@ -483,6 +483,29 @@ button:hover,
   box-shadow: 0 0 0 1px rgba(15, 23, 42, 1), 0 18px 45px rgba(15, 23, 42, 0.9);
 }
 
+/* Subtle section overlays for metrics & value props */
+.section-overlay {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  mix-blend-mode: normal;
+}
+
+.section-overlay--value {
+  background:
+    radial-gradient(90% 120% at 12% 18%, rgba(56, 189, 248, 0.22) 0%, transparent 60%),
+    radial-gradient(80% 140% at 80% 66%, rgba(34, 197, 94, 0.18) 0%, transparent 72%),
+    linear-gradient(155deg, rgba(15, 23, 42, 0.92) 0%, rgba(15, 23, 42, 0.98) 100%);
+}
+
+.section-overlay--metrics {
+  background:
+    radial-gradient(100% 140% at 18% 30%, rgba(56, 189, 248, 0.26) 0%, transparent 65%),
+    radial-gradient(90% 110% at 78% 68%, rgba(129, 140, 248, 0.2) 0%, transparent 72%),
+    linear-gradient(160deg, rgba(15, 23, 42, 0.96) 0%, rgba(15, 23, 42, 0.98) 100%);
+}
+
 /* ===== GRID SYSTEMS ===== */
 .responsive-grid {
   display: grid;
